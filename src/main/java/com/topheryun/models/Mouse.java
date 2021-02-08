@@ -20,5 +20,12 @@ public class Mouse {
 	private String name;
 	private int price;
 	private LocalDate date;
-
+	
+	public Mouse(String name, int price) {
+		super();
+		this.name = name;
+		this.price = price;
+		this.date = LocalDate.now();
+	}
+	
 }
