@@ -1,5 +1,7 @@
 package com.topheryun.controllers;
 
+import java.time.LocalDate;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -21,8 +23,10 @@ public class ScraperController {
 	
 	@PutMapping
 	public void insertMouse(@RequestBody Mouse mouse) {
+		System.out.println("before: " + mouse);
+		mouse.setDate(LocalDate.now());
+		System.out.println("after: " + mouse);
 		if (verifyMouse(mouse)) scraperService.insertMouse(mouse);
-		System.out.println(mouse);
 	}
 	
 	private boolean verifyMouse(Mouse mouse) {
