@@ -17,7 +17,7 @@ public class ScraperServiceImpl implements IScraperService {
 	
 	@Override
 	public void insertMouse(Mouse mouse) {
-		scraperDAO.saveAndFlush(mouse);
+		scraperDAO.save(mouse);
 	}
 
 }
